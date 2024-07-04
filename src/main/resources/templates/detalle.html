@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .producto-imagen {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Detalle de Producto</h1>
+    
+    <div>
+        <h2>Usuario: <span th:text="${nombreUsuario}"></span></h2>
+        <img th:src="${foto}" class="producto-imagen" alt="Imagen de Usuario">
+    </div>
+    
+    <hr>
+    
+    <div>
+        <h3>Detalles del Producto:</h3>
+        <p><strong>Nombre:</strong> <span th:text="${producto.nombre}"></span></p>
+        <p><strong>Precio:</strong> <span th:text="${producto.precio}"></span></p>
+        <p><strong>Stock:</strong> <span th:text="${producto.stock}"></span></p>
+        <p><strong>Categoría:</strong> <span th:text="${producto.categorias.nombre}"></span></p>
+    </div>
+    
+    <hr>
+    
+    <a href="#" class="btn btn-primary">Volver</a>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
